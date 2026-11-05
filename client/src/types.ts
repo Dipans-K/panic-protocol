@@ -1,0 +1,4 @@
+export type Role='COMMANDER'|'ENGINEER'|'ANALYST'|'INTEL'|'COMMS';
+export type Phase='lobby'|'diagnose'|'contain'|'restore'|'recovery'|'won'|'lost';
+export interface Player{id:string;name:string;role:Role;connected:boolean;isHost:boolean;ready:boolean}
+export interface RoomState{code:string;hostId:string;phase:Phase;players:Player[];systems:{power:number;communications:number;servers:number;firewall:number};threat:number;score:number;resources:{repairKits:number;powerUnits:number;firewallOverride:number};elapsed:number;remaining:number;stageRemaining:number;stage:number;diagnosed:boolean;isolated:boolean;isolationConfirmed:boolean;repaired:string[];finalActivations:string[];completedObjectives:string[];messages:{id:string;name:string;role:Role;text:string;at:number;kind?:string}[];notice:string;resultReason?:string}
